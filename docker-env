@@ -1,0 +1,13 @@
+NGINX_HOST=localhost
+NGINX_CACHE_DIR=/data/nginx/cache
+
+SPRING_PROFILE=webjars,PROD,plugins
+
+HYMIR_LOG_CONFIG=/etc/iiif-server/logback-spring.xml
+HYMIR_RULES=/etc/iiif-server/rules.yml
+HYMIR_PORT=8080
+# You can enable this to get a full debug output
+#HYMIR_OPTS="--debug"
+HYMIR_OPTS=""
+
+IIIF_PASS_DEFAULT=false

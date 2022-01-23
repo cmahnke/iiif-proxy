@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  web:
+    volumes:
+      - certbootwww:/var/www/certbot/:ro
+      - certboxconf:/etc/nginx/ssl/:ro
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - certbootwww:/var/www/certbot/:rw
+      - certboxconf:/etc/letsencrypt/:rw
+
+volumes:
+  certbootwww:
+  certboxconf:

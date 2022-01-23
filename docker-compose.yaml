@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  web:
+    image: ghcr.io/cmahnke/iiif-proxy/web:main
+    build:
+      dockerfile: ./deployment/docker/web/Dockerfile
+      context: .
+    links:
+      - iiif-image-server
+    depends_on:
+      - iiif-image-server
+    volumes:
+      - ./deployment/docker/web/config/site.conf:/etc/nginx/templates/default.conf.template:ro
+      - ./deployment/docker/web/config/proxy_cache.conf:/etc/nginx/conf.d/proxy_cache.conf:ro
+      - ./deployment/docker/web/config/proxy_params:/etc/nginx/proxy_params:ro
+      - ./deployment/docker/web/config/iiif_default_passthru.conf:/etc/nginx/iiif/iiif_default_passthru.conf:ro
+#      - nginx_cache:/data/nginx/cache
+    restart: always
+    env_file:
+      - docker-env
+    ports:
+      - '8080:80'
+      - '8443:443'
+
+  iiif-image-server:
+    image: ghcr.io/cmahnke/iiif-proxy/iiif-image-server:main
+    build:
+      dockerfile: ./deployment/docker/iiif-image-server/Dockerfile
+      context: .
+    volumes:
+      - ./deployment/docker/iiif-image-server/config/application-local+monitoring.yml:/opt/iiif-server/application.yml:ro
+#      - ./deployment/docker/iiif-image-server/config/application.yml:/opt/iiif-server/application.yml:ro
+      - ./deployment/docker/iiif-image-server/config/rules.yml:/etc/iiif-server/rules.yml:ro
+      - ./deployment/docker/iiif-image-server/config/logback-spring.xml:/etc/iiif-server/logback-spring.xml:ro
+    env_file:
+      - docker-env
+    restart: always
+    ports:
+      - '8080'
+
+#volumes:
+#  nginx_cache:

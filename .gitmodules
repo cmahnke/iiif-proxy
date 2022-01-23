@@ -1,0 +1,12 @@
+[submodule "servers/iiif-server-hymir"]
+	path = servers/iiif-server-hymir
+	url = https://github.com/dbmdz/iiif-server-hymir.git
+[submodule "server/iiif-apis"]
+	path = services/iiif-image-server/iiif-apis
+	url = https://github.com/cmahnke/iiif-apis.git
+[submodule "server/iiif-server-hymir"]
+	path = services/iiif-image-server/iiif-server-hymir
+	url = https://github.com/cmahnke/iiif-server-hymir.git
+[submodule "services/iiif-image-server/hymir-quality-services"]
+	path = services/iiif-image-server/hymir-quality-services
+	url = https://github.com/cmahnke/hymir-quality-services.git

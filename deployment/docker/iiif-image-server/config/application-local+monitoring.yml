@@ -1,0 +1,64 @@
+custom:
+  iiif:
+    headers:
+      all:
+# Disable caching in local mode
+        - name: 'cache-control'
+          value: 'no-cache'
+#      image:
+#        image:
+
+#        info:
+#          - name: 'Access-Control-Allow-Origin'
+#            value: '*'
+#      presentation:
+#        manifest: null
+#        collection: null
+#        annotationList: null
+    identifier:
+      escape: false
+
+  image:
+    quality:
+      noop:
+        enabled: false
+      background:
+        enabled: true
+      fold:
+        enabled: true
+
+plugins:
+  packages: de.christianmahnke.lab.iiif.hymir
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: '/monitoring'
+      exposure:
+        include: '*'
+
+server:
+  error:
+    include-exception: true
+    include-stacktrace: always
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    active: local
+    include: webjars, plugins
+
+---
+spring:
+  config:
+    activate:
+      on-profile: debug
+
+logging:
+  level:
+    ROOT: DEBUG

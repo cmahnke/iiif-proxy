@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IIIF Proxy - Image API Viewer and debugger</title>
+    <link rel="stylesheet" href="style.scss" type="text/css" />
+    <script src="{{ MAPPINGS_URL || '/mappings/js' }}" />
+</head>
+
+<body>
+    <div class="addressBar">
+        <div id="iiifLink"></div>
+        <label class="addressBarLabel" for="imageInfoUrl">
+            Enter <span style="font-family: monospace;">info.json</span> URL:
+        </label>
+        <input type="text" id="imageInfoUrl" value="">
+        <button id="display">Display image</button>
+        <div class="rewriteControl">
+            <input type="checkbox" id="rewriteBox" name="rewrite"><label for="rewrite">Rewrite URL for Proxy</label>
+        </div>
+        <div id="rewriteInfo"></div>
+    </div>
+    <div class="contentWrapper">
+        <div id="map" class="map"></div>
+        <div class="controls">
+            <div class="sourceSelect">
+                <div>
+                    <select id="qualitySelect">
+                    </select>The quality to be displayed
+                </div>
+                <div>
+                    <select id="formatSelect">
+                    </select>File format to use, not all are supported by the browser
+                </div>
+            </div>
+        </div>
+        <div class="colorContainer">
+            <div id="picker"></div>
+            <div class="colorInfo">
+                <input id="hexInput"></input>
+            </div>
+        </div>
+        <div class="messageContainer">
+            <div id="iiif-notification">&nbsp;</div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

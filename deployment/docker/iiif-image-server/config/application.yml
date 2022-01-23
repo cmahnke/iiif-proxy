@@ -1,0 +1,41 @@
+custom:
+  iiif:
+    headers:
+      all:
+# Set our own header to debug reverse proxy issues
+        - name: 'served by'
+          value: 'hymir'
+      image:
+        image:
+# Cache image for a week
+          - name: 'cache-control'
+            value: 'max-age=604800'
+
+    identifier:
+      escape: false
+
+  image:
+    quality:
+      noop:
+        enabled: false
+      background:
+        enabled: true
+      fold:
+        enabled: true
+
+plugins:
+  packages: de.christianmahnke.lab.iiif.hymir
+
+server:
+  tomcat:
+    accesslog:
+      directory: "/var/log"
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    include: plugins
