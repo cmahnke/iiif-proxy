@@ -1,4 +1,4 @@
-name: IIIF Frontend Server GitHub Packages
+name: IIIF Web Server GitHub Packages
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         uses: docker/metadata-action@e5622373a38e60fb6d795a4421e56882f2d7a681
         with:
           images: |
-            ghcr.io/${{ github.repository }}/frontend
+            ghcr.io/${{ github.repository }}/web
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v2.7.0
         with:
