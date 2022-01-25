@@ -1,4 +1,4 @@
-name: IIIF Proxy
+name: IIIF-Proxy
 description: A Hymir based IIIF Proxy for Image API rewrites
 version: 0.0.1
 apiVersion: v1
