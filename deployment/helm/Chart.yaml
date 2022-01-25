@@ -1,6 +1,6 @@
 name: iiif-proxy
 description: A Hymir based IIIF Proxy for Image API rewrites
-version: 0.0.1
+version: 0.0.2
 apiVersion: v1
 keywords:
   - IIIF Proxy
