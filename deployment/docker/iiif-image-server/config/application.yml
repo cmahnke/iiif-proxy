@@ -22,6 +22,9 @@ custom:
         enabled: true
       fold:
         enabled: true
+      stack:
+        name: nofold+transparentbg
+        enabled: true
 
 plugins:
   packages: de.christianmahnke.lab.iiif.hymir

@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  HYMIR_LOG_CONFIG: /etc/iiif-server/logback-spring.xml
+  HYMIR_OPTS: {{ .Values.hymir.opts | quote }}
+  HYMIR_PORT: {{ .Values.hymir.port | quote }}
+  HYMIR_RULES: /etc/iiif-server/rules.yml
+  IIIF_PASS_DEFAULT: {{ .Values.web.proxyDefaultImage | quote }}
+  NGINX_CACHE_DIR: {{ .Values.web.cachePath | quote }}
+  NGINX_HOST: {{ .Values.web.frontendURL | quote }}
+  SPRING_PROFILE: {{ .Values.hymir.springProfile | quote }}
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: {{ .Release.Name }}-env-configmap

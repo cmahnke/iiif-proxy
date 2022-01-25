@@ -1,0 +1,51 @@
+apiVersion: v1
+data:
+  logback-spring.xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+      <!-- see https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html#_profile_specific_configuration -->
+      <springProfile name="PROD">
+        <appender name="default" class="ch.qos.logback.core.rolling.RollingFileAppender">
+          <file>/var/log/hymir.log</file>
+          <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/hymir/hymir.%d{yyyy-MM-dd}.log</fileNamePattern>
+          </rollingPolicy>
+          <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/hymir/hymir.%d{yyyy-MM}.%i.log.gz</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>90</maxHistory>
+            <totalSizeCap>5GB</totalSizeCap>
+          </rollingPolicy>
+          <encoder>
+            <pattern>[%d{ISO8601} %5p] %40.40c:%4L [%-8t] - %m%n</pattern>
+          </encoder>
+        </appender>
+      </springProfile>
+
+      <springProfile name="local">
+        <appender name="default" class="ch.qos.logback.core.ConsoleAppender">
+          <encoder>
+            <pattern>[%d{ISO8601} %5p] %40.40c:%4L [%-8t] - %m%n</pattern>
+          </encoder>
+        </appender>
+      </springProfile>
+
+      <springProfile name="plugins">
+        <logger name="de.christianmahnke.lab" level="info" />
+      </springProfile>
+
+      <logger name="de.digitalcollections.iiif.hymir.presentation.backend" level="error" />
+      <logger name="de.digitalcollections.iiif.hymir.presentation.business" level="error" />
+      <logger name="de.digitalcollections.commons" level="error" />
+
+      <root level="info">
+        <appender-ref ref="default" />
+      </root>
+
+    </configuration>
+kind: ConfigMap
+metadata:
+  annotations:
+    use-subpath: "true"
+  creationTimestamp: null
+  name: {{ .Release.Name }}-logback-spring-xml

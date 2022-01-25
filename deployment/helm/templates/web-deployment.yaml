@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iiif-proxy
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: iiif-proxy
+    spec:
+      containers:
+        - name: web
+          image: ghcr.io/cmahnke/iiif-proxy/web:main
+          imagePullPolicy: Always
+          envFrom:
+          - configMapRef:
+              name: {{ .Release.Name }}-env-configmap
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          resources: {}
+          volumeMounts:
+            - mountPath: /etc/nginx/templates/default.conf.template
+              name: {{ .Release.Name }}-default-conf-template
+              readOnly: true
+              subPath: default.conf.template
+            - mountPath: /etc/nginx/conf.d/proxy_cache.conf
+              name: {{ .Release.Name }}-proxy-cache-conf
+              readOnly: true
+              subPath: proxy_cache.conf
+            - mountPath: /etc/nginx/proxy_params
+              name: {{ .Release.Name }}-web-proxy-params
+              readOnly: true
+              subPath: proxy_params
+            - mountPath: /etc/nginx/iiif/iiif_default_passthru.conf
+              name: {{ .Release.Name }}-iiif-default-passthru
+              readOnly: true
+              subPath: iiif_default_passthru.conf
+            - mountPath: {{ .Values.web.cachePath }}
+              name: cache-pvc
+      restartPolicy: Always
+      volumes:
+        - configMap:
+            items:
+              - key: default.conf.template
+                path: default.conf.template
+            name: {{ .Release.Name }}-default-conf-template
+          name: {{ .Release.Name }}-default-conf-template
+        - configMap:
+            items:
+              - key: proxy_cache.conf
+                path: proxy_cache.conf
+            name: {{ .Release.Name }}-proxy-cache-conf
+          name: {{ .Release.Name }}-proxy-cache-conf
+        - configMap:
+            items:
+              - key: proxy_params
+                path: proxy_params
+            name: {{ .Release.Name }}-web-proxy-params
+          name: {{ .Release.Name }}-web-proxy-params
+        - configMap:
+            items:
+              - key: iiif_default_passthru.conf
+                path: iiif_default_passthru.conf
+            name: {{ .Release.Name }}-iiif-default-passthru
+          name: {{ .Release.Name }}-iiif-default-passthru
+        - name: cache-pvc
+          persistentVolumeClaim:
+            claimName: cache-pvc
+status: {}

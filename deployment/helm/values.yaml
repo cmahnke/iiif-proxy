@@ -1,0 +1,8 @@
+web:
+  frontendURL: localhost
+  cachePath: /data/nginx/cache
+  proxyDefaultImage: false
+hymir:
+  port: 8080
+  springProfile: PROD,plugins
+  opts: ""

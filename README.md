@@ -17,12 +17,15 @@ git clone --recurse-submodules https://github.com/cmahnke/iiif-proxy.git
 docker-compose build
 ```
 
-
 # Running
 
 ```
- docker-compose up
+docker-compose up
 ```
+
+# Accessing the demo application
+
+There is a [demo web application](http://localhost:8080/viewer/) bundled, which can do the required URL rewrite.
 
 
 # TODO
@@ -31,7 +34,6 @@ docker-compose build
 
   * Finish integration of Letsencrypt
     * Test SSL
-  * Finish Helm Chart
 
 ## Functionality
   * Implement IIIF presentation manifest rewrite

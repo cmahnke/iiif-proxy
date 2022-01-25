@@ -1,0 +1,13 @@
+name: IIIF Proxy
+description: A Hymir based IIIF Proxy for Image API rewrites
+version: 0.0.1
+apiVersion: v1
+keywords:
+  - IIIF Proxy
+sources:
+  - https://github.com/cmahnke/iiif-proxy.git
+home: https://github.com/cmahnke/iiif-proxy
+maintainers:
+  - name: Chrsitian Mahnke
+    email: cmahnke@gmail.com
+icon: https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png
