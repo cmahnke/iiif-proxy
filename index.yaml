@@ -18,4 +18,22 @@ entries:
     urls:
     - https://github.com/cmahnke/iiif-proxy/releases/download/IIIF-Proxy-0.0.1/IIIF-Proxy-0.0.1.tgz
     version: 0.0.1
-generated: "2022-01-25T12:38:17.276650401Z"
+  iiif-proxy:
+  - apiVersion: v1
+    created: "2022-01-25T12:56:07.511597263Z"
+    description: A Hymir based IIIF Proxy for Image API rewrites
+    digest: 5eb45f3958d317d85daa493d521a8df04d19d91ba3066d722283d49ad868de43
+    home: https://github.com/cmahnke/iiif-proxy
+    icon: https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png
+    keywords:
+    - IIIF Proxy
+    maintainers:
+    - email: cmahnke@gmail.com
+      name: Chrsitian Mahnke
+    name: iiif-proxy
+    sources:
+    - https://github.com/cmahnke/iiif-proxy.git
+    urls:
+    - https://github.com/cmahnke/iiif-proxy/releases/download/iiif-proxy-0.0.1/iiif-proxy-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-01-25T12:56:07.511603663Z"
