@@ -31,14 +31,16 @@ There is a [demo web application](http://localhost:8080/viewer/) bundled, which 
 # TODO
 
 ## Infrastructure
-
   * Finish integration of Letsencrypt
     * Test SSL
 
 ## Functionality
   * Implement IIIF presentation manifest rewrite
 
+# Usability
+  * Catch 415 errors (wrong media type for content, like images with transparency) in viewer
+
 
 # Links to try
 
-* https://images.sub.uni-goettingen.de/iiif/image/gdz:DE-611-HS-3461927:00000001/info.json
+* https://images.sub.uni-goettingen.de/iiif/image/gdz:DE-611-HS-3461927:00000016/info.json
