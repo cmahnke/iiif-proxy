@@ -35,11 +35,17 @@ RUN --mount=target=/mnt/build-context \
         gnutls-cli --print-cert $SERVER </dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > $SERVER.crt ; \
         mv $SERVER.crt /etc/nginx/ssl/backends/ ; \
     done && \
-    #Generate dummy certificates
+    # Generate dummy certificates
     printf 'organization = "Forum Wissen"\nstate = "Lower Saxony"\ncountry = DE\n' > ssl.template && \
     certtool --generate-privkey --sec-param High --outfile /etc/nginx/ssl/live/localhost/privkey.pem && \
     certtool --generate-self-signed --load-privkey /etc/nginx/ssl/live/localhost/privkey.pem --template /ssl.template > /etc/nginx/ssl/live/localhost/fullchain.pem && \
     rm -f /ssl.template && \
+    # Copy additional entrypoint scrips
+    if [ -z "$(ls -A /mnt/build-context/deployment/docker/web/entrypoint.d/)" ]; then \
+        echo "No additional entrypoint scripts found!" ; \
+    else \
+        echo "Copying $(ls -A /mnt/build-context/deployment/docker/web/entrypoint.d/)" && \
+        cp /mnt/build-context/deployment/docker/web/entrypoint.d/* /docker-entrypoint.d/ ; fi && \
     curl -o $WEB_ROOT/favicon.ico https://iiif.io/api/assets/favicon.ico && \
     apk del $REQ_BUILD $REQ_BUILD && \
     rm -rf /var/cache/apk/*

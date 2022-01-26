@@ -45,7 +45,7 @@ spec:
               readOnly: true
               subPath: iiif_default_passthru.conf
             - mountPath: {{ .Values.web.cachePath }}
-              name: cache-pvc
+              name: {{ .Release.Name }}-cache-pvc
       restartPolicy: Always
       volumes:
         - configMap:
@@ -72,7 +72,7 @@ spec:
                 path: iiif_default_passthru.conf
             name: {{ .Release.Name }}-iiif-default-passthru
           name: {{ .Release.Name }}-iiif-default-passthru
-        - name: cache-pvc
+        - name: {{ .Release.Name }}-cache-pvc
           persistentVolumeClaim:
-            claimName: cache-pvc
+            claimName: {{ .Release.Name }}-cache-pvc
 status: {}
