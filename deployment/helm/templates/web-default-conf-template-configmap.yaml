@@ -41,7 +41,6 @@ data:
             proxy_pass https://images.sub.uni-goettingen.de;
         }
 
-
         location ~ ^/(?!iiif|monitoring|viewer|favicon).*$ {
             proxy_set_header        Host $http_host;
             proxy_pass http://iiif-image-server:{{ .Values.hymir.port }};
