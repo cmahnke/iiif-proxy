@@ -25,7 +25,11 @@ spec:
               name: {{ .Release.Name }}-env-configmap
           ports:
             - containerPort: 80
+              name: "80"
+              protocol: TCP
             - containerPort: 443
+              name: "443"
+              protocol: TCP
           resources: {}
           volumeMounts:
             - mountPath: /etc/nginx/templates/default.conf.template
