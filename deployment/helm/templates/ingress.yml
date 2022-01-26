@@ -1,4 +1,3 @@
-{{/* if .Capabilities.APIVersions.Has "networking.k8s.io/v1" */}}
 {{- if ge (int .Capabilities.KubeVersion.Minor) 19 }}
 apiVersion: networking.k8s.io/v1
 {{- else }}
@@ -15,7 +14,12 @@ spec:
       - path: /
         pathType: Prefix
         backend:
+{{- if ge (int .Capabilities.KubeVersion.Minor) 19 }}
           service:
             name: web
             port:
               number: 80
+{{- else }}
+          serviceName: web
+          servicePort: 80
+{{- end }}
