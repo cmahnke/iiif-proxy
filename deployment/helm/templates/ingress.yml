@@ -21,5 +21,5 @@ spec:
               number: 80
 {{- else }}
           serviceName: web
-          servicePort: 80
+          servicePort: http
 {{- end }}
