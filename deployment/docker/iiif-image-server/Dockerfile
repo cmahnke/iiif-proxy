@@ -26,7 +26,6 @@ RUN --mount=target=/mnt/build-context \
         rm $SERVER.crt ; \
     done && \
 # Include .dot files and directories in shell * - used for .git directories (doesn't work for Bourne Shell)
-    #shopt -s dotglob && \
     cp -r /mnt/build-context/services/iiif-image-server/iiif-apis /mnt/build-context/services/iiif-image-server/iiif-server-hymir /mnt/build-context/services/iiif-image-server/hymir-quality-services $BUILD_DIR && \
     cd $BUILD_DIR/iiif-apis && \
     mvn -ntp clean install -Dfmt.skip -DskipTests -Dspotbugs.skip=true && \

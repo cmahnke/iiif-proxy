@@ -1,18 +1,21 @@
 # syntax=docker/dockerfile:experimental
 
 ARG WEB_ROOT=/var/www/html
+ARG DEBUG=false
 
 FROM node:17-alpine AS builder
 
 LABEL maintainer="cmahnke@gmail.com"
 
 ARG WEB_ROOT
+ARG DEBUG
 
 RUN --mount=target=/mnt/build-context \
     mkdir -p $WEB_ROOT && \
     cp -r /mnt/build-context/services/web/viewer $WEB_ROOT/ && \
     cd $WEB_ROOT/viewer && \
     sed -i -E 's/([A-Z_-]*)=/\1=/g' .env && \
+    if [ -z "$DEBUG" ] || [ "$DEBUG" != "true" ] ; then echo "Emptying dev .env" ; sed -i -E 's/([A-Z_-]*)=.*/\1=/g' .env ; fi && \
     npm install && \
     npm run build
 
