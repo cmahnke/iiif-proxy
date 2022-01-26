@@ -1,4 +1,5 @@
-{{- if .Capabilities.APIVersions.Has "networking.k8s.io/v1" }}
+{{/* if .Capabilities.APIVersions.Has "networking.k8s.io/v1" */}}
+{{- if ge (int .Capabilities.KubeVersion.Minor) 19 }}
 apiVersion: networking.k8s.io/v1
 {{- else }}
 apiVersion: networking.k8s.io/v1beta1

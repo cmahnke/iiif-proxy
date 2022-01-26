@@ -2,6 +2,8 @@ This is a preview (as in pre alpha) version of the {{ .Chart.Name }}.
 
 To learn more visit the [Project GitHub page](https://github.com/forumwissengoe/iiif-proxy)
 
-This NOTES.txt was evaluated on K8s {{ Capabilities.KubeVersion.Major }}.{{ .Capabilities.KubeVersion.Minor }}, Helm Version {{ .Capabilities.HelmVersion.Version }}
+This NOTES.txt was evaluated on K8s {{ .Capabilities.KubeVersion.Major }}.{{ .Capabilities.KubeVersion.Minor }}, Helm Version {{ .Capabilities.HelmVersion.Version }}
 
-networking.k8s.io/v1: {{ .Capabilities.APIVersions.Has "networking.k8s.io/v1" }}
+APIs
+  * networking.k8s.io/v1: {{ .Capabilities.APIVersions.Has "networking.k8s.io/v1" }}
+  * networking.k8s.io/v1beta1: {{ .Capabilities.APIVersions.Has "networking.k8s.io/v1beta1" }}
