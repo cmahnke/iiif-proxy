@@ -3,18 +3,20 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   name: iiif-image-server
+  labels:
+    app.component: iiif-image-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: iiif-proxy
+      app.component: iiif-image-server
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: iiif-proxy
+        app.component: iiif-image-server
     spec:
       containers:
         - name: iiif-image-server

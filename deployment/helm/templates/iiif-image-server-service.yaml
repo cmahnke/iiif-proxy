@@ -3,10 +3,14 @@ kind: Service
 metadata:
   creationTimestamp: null
   name: iiif-image-server
+  labels:
+    app.component: iiif-image-server
 spec:
   ports:
     - name: "8080"
       port: {{ .Values.hymir.port }}
       targetPort: 8080
+  selector:
+    app.component: iiif-image-server
 status:
   loadBalancer: {}
