@@ -4,6 +4,28 @@ entries:
   - annotations:
       app: iiif-proxy
     apiVersion: v1
+    created: "2022-01-26T14:39:48.263743479Z"
+    description: A Hymir based IIIF Proxy for Image API rewrites
+    digest: 34368aefc4fad66dffecbdf7733f26f031e902ad945ffa171eaf957254f259c0
+    home: https://github.com/cmahnke/iiif-proxy
+    icon: https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png
+    keywords:
+    - IIIF Proxy
+    - IIIF
+    - IIIF Image API
+    kubeVersion: => 1.18.0
+    maintainers:
+    - email: cmahnke@gmail.com
+      name: Chrsitian Mahnke
+    name: iiif-proxy
+    sources:
+    - https://github.com/cmahnke/iiif-proxy.git
+    urls:
+    - https://github.com/cmahnke/iiif-proxy/releases/download/iiif-proxy-0.0.5/iiif-proxy-0.0.5.tgz
+    version: 0.0.5
+  - annotations:
+      app: iiif-proxy
+    apiVersion: v1
     created: "2022-01-26T09:28:44.960011327Z"
     description: A Hymir based IIIF Proxy for Image API rewrites
     digest: 0cd9b3fe8baf1ae0880876a931861f512d1fac107e127cc63550e3b85a68f3cd
@@ -79,4 +101,4 @@ entries:
     urls:
     - https://github.com/cmahnke/iiif-proxy/releases/download/iiif-proxy-0.0.1/iiif-proxy-0.0.1.tgz
     version: 0.0.1
-generated: "2022-01-26T09:28:44.960197929Z"
+generated: "2022-01-26T14:39:48.263761479Z"
