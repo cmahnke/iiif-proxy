@@ -222,7 +222,7 @@ var iiifInfo, iiifQuality, iiifFormat;
 refreshMap(urlInput.value);
 
 var colorPicker = new iro.ColorPicker('#picker', {
-    color: 'rgb(255, 0, 0)',
+    color: 'rgb(31, 58, 113)',
     borderWidth: 1,
     borderColor: '#fff',
 });
