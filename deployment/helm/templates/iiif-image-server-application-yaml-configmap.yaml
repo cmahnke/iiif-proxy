@@ -5,6 +5,14 @@ data:
       iiif:
         identifier:
           escape: false
+        headers:
+          all:
+            - name: 'Access-Control-Allow-Origin'
+              value: '*'
+          image:
+            image:
+              - name: 'cache-control'
+                value: 'max-age=604800'
 
       image:
         quality:
@@ -42,7 +50,6 @@ data:
         pathmatch:
           matching-strategy: ant_path_matcher
       profiles:
-        active: local
         include: webjars, plugins
 
     ---

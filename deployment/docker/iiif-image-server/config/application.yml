@@ -5,6 +5,8 @@ custom:
 # Set our own header to debug reverse proxy issues
         - name: 'served by'
           value: 'hymir'
+        - name: 'Access-Control-Allow-Origin'
+          value: '*'
       image:
         image:
 # Cache image for a week
@@ -19,8 +21,10 @@ custom:
       noop:
         enabled: false
       background:
+        name: transparent-background
         enabled: true
       fold:
+        name: nofold
         enabled: true
       stack:
         name: nofold+transparentbg

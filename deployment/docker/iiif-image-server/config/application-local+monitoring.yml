@@ -23,9 +23,15 @@ custom:
       noop:
         enabled: false
       background:
+        name: transparent-background
         enabled: true
       fold:
+        name: nofold
         enabled: true
+      stack:
+        name: nofold+transparentbg
+        enabled: true
+        plugins: nofold,transparent-background
 
 plugins:
   packages: de.christianmahnke.lab.iiif.hymir

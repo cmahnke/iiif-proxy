@@ -36,12 +36,12 @@ There is a [demo web application](http://localhost:8080/viewer/) bundled, which 
 
 ## Functionality
   * Implement IIIF presentation manifest rewrite
+  * Check other types of page sequences (like recto / verso)
 
-# Usability
+## Usability
   * Catch 415 errors (wrong media type for content, like images with transparency) in viewer
   * Update URL depending on settings
   * Work with identifier instead of URL of `info.json` file
-
 
 # Links to try
 

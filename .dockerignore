@@ -2,3 +2,4 @@
 **/.parcel-cache
 deployment/helm
 **/target
+services/web/viewer/node_modules/**

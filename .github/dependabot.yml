@@ -17,3 +17,7 @@ updates:
     directory: "/services/web/viewer"
     schedule:
       interval: "daily"
+  - package-ecosystem: "composer"
+    directory: "/coins/cache-warmer/harvester"
+    schedule:
+      interval: "daily"
