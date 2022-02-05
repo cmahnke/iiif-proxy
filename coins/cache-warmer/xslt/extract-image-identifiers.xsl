@@ -12,7 +12,7 @@
         <xsl:choose>
             <xsl:when test="$collection != ''">
                 <xsl:for-each select="collection(concat($collection, '/?select=*.xml;recurse=no'))">
-                    <xsl:apply-templates select="."/>
+                    <xsl:apply-templates select="./lido:lido"/>
                 </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
