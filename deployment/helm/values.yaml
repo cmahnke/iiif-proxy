@@ -2,6 +2,8 @@ web:
   frontendURL: localhost
   cachePath: /data/nginx/cache
   proxyDefaultImage: false
+storage:
+  class: ""
 hymir:
   port: 8080
   springProfile: PROD,plugins

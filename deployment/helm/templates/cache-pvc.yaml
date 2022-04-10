@@ -5,6 +5,9 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+{{- if .Values.storage.class }}
+  storageClassName: {{ .Values.storage.class }}
+{{- end }}
   resources:
     requests:
       storage: 40Gi
