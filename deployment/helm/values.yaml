@@ -4,6 +4,8 @@ web:
   proxyDefaultImage: false
 storage:
   class: ""
+ssl:
+  issuer: letsencrypt
 hymir:
   port: 8080
   springProfile: PROD,plugins
