@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "caseyamcl/guzzle_retry_middleware",
-            "version": "v2.7",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caseyamcl/guzzle_retry_middleware.git",
-                "reference": "e6717d8460e5ef40db6d2e7218069a2826f69138"
+                "reference": "5c7408ca71fe1358333638031e3e7124552d5496"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caseyamcl/guzzle_retry_middleware/zipball/e6717d8460e5ef40db6d2e7218069a2826f69138",
-                "reference": "e6717d8460e5ef40db6d2e7218069a2826f69138",
+                "url": "https://api.github.com/repos/caseyamcl/guzzle_retry_middleware/zipball/5c7408ca71fe1358333638031e3e7124552d5496",
+                "reference": "5c7408ca71fe1358333638031e3e7124552d5496",
                 "shasum": ""
             },
             "require": {
@@ -68,9 +68,15 @@
             ],
             "support": {
                 "issues": "https://github.com/caseyamcl/guzzle_retry_middleware/issues",
-                "source": "https://github.com/caseyamcl/guzzle_retry_middleware/tree/v2.7"
+                "source": "https://github.com/caseyamcl/guzzle_retry_middleware/tree/v2.7.1"
             },
-            "time": "2021-12-04T02:49:15+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/caseyamcl",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-08-07T16:33:57+00:00"
         },
         {
             "name": "caseyamcl/phpoaipmh",
