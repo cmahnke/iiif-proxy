@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.1",
-    "parcel": "^2.8.0",
+    "parcel": "^2.8.1",
     "parcel-resolver-ignore": "^2.1.3",
     "posthtml-expressions": "^1.10.0"
   },
