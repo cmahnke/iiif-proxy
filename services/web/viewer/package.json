@@ -10,7 +10,7 @@
     "@parcel/transformer-sass": "^2.10.0",
     "parcel": "^2.10.0",
     "parcel-resolver-ignore": "^2.1.5",
-    "posthtml-expressions": "^1.11.1"
+    "posthtml-expressions": "^1.11.2"
   },
   "scripts": {
     "start": "parcel index.html",
