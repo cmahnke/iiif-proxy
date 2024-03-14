@@ -33,7 +33,7 @@ jobs:
           images: |
             ghcr.io/${{ github.repository }}/cache-warmer
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v5.2.0
+        uses: docker/build-push-action@v5.3.0
         with:
           context: .
           file: ./coins/cache-warmer/docker/Dockerfile
