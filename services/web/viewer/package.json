@@ -4,7 +4,7 @@
     "@fontsource/open-sans": "^5.0.28",
     "@jaames/iro": "^5.5.2",
     "normalize.css": "^8.0.1",
-    "ol": "9.1.0"
+    "ol": "9.2.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
