@@ -33,7 +33,7 @@ jobs:
           images: |
             ghcr.io/${{ github.repository }}/web
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v6.0.1
+        uses: docker/build-push-action@v6.0.2
         with:
           context: .
           file: ./deployment/docker/web/Dockerfile
