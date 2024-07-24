@@ -5,19 +5,39 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      github-actions:
+        patterns:
+        - '*'
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      docker:
+        patterns:
+        - '*'
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      maven:
+        patterns:
+        - '*'
   - package-ecosystem: "npm"
     directory: "/services/web/viewer"
     schedule:
       interval: "daily"
+    groups:
+      npm:
+        patterns:
+        - '*'
   - package-ecosystem: "composer"
     directory: "/coins/cache-warmer/harvester"
     schedule:
       interval: "daily"
+    groups:
+      composer:
+        patterns:
+        - '*' 
