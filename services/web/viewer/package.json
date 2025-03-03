@@ -1,7 +1,7 @@
 {
   "name": "IIIF Proxy Image Viewer",
   "dependencies": {
-    "@fontsource/open-sans": "^5.1.1",
+    "@fontsource/open-sans": "^5.2.5",
     "@jaames/iro": "^5.5.2",
     "normalize.css": "^8.0.1",
     "ol": "10.4.0"
