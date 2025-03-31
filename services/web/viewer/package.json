@@ -4,11 +4,11 @@
     "@fontsource/open-sans": "^5.2.5",
     "@jaames/iro": "^5.5.2",
     "normalize.css": "^8.0.1",
-    "ol": "10.4.0"
+    "ol": "10.5.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.13.3",
-    "parcel": "^2.13.3",
+    "@parcel/transformer-sass": "^2.14.4",
+    "parcel": "^2.14.4",
     "parcel-resolver-ignore": "^2.2.0",
     "posthtml-expressions": "^1.11.4"
   },
