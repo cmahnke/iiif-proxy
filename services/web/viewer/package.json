@@ -9,7 +9,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.0",
     "parcel": "^2.16.0",
-    "parcel-resolver-ignore": "^2.2.0",
+    "parcel-resolver-ignore": "^2.2.1",
     "posthtml-expressions": "^1.11.4"
   },
   "scripts": {
