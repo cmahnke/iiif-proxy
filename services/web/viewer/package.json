@@ -7,8 +7,8 @@
     "ol": "10.7.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.16.3",
-    "parcel": "^2.16.3",
+    "@parcel/transformer-sass": "^2.16.4",
+    "parcel": "^2.16.4",
     "parcel-resolver-ignore": "^2.2.1",
     "posthtml-expressions": "^1.11.4"
   },
