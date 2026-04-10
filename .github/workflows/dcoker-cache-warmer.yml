@@ -16,7 +16,7 @@ jobs:
           submodules: true
           fetch-depth: 0
       - name: Log in to the Container registry
-        uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2
+        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -33,7 +33,7 @@ jobs:
           images: |
             ghcr.io/${{ github.repository }}/cache-warmer
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v7.0.0
+        uses: docker/build-push-action@v7.1.0
         with:
           context: .
           file: ./coins/cache-warmer/docker/Dockerfile
